@@ -23,4 +23,12 @@ public abstract class LibraryItem {
         this.id = id;
         this.title = title;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
 }

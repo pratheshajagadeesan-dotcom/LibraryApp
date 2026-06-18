@@ -7,11 +7,13 @@ package org.example.models;
 public class BookModel extends LibraryItem {
 
     private String author;
+    private Integer year;
     private BookStatus status;
 
     public BookModel(Long id,
                      String title,
                      String author,
+                     Integer year,
                      BookStatus status) {
 
         super(id, title);
@@ -22,8 +24,25 @@ public class BookModel extends LibraryItem {
             );
         }
 
+        if (year == null) {
+            throw new IllegalArgumentException(
+                    "Year cannot be null");
+        }
+
         this.author = author;
         this.status = status;
+        this.year = year;
+    }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public BookStatus getStatus() {
+        return status;
     }
 }
