@@ -1,9 +1,23 @@
 package org.example;
 
+import org.example.models.BookModel;
+
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
+        FileRepository repository =
+                new FileRepository();
+
+        List<BookModel> books = repository.load();
+
+        repository.save(books);
+
+        System.out.println("Save successful");
+
         Book book1 = new Book(1L, "Shantaram", "Gregory David Roberts", 2003);
         Book book2 = new Book(2L, "The Long Walk", "Slawomir Rawicz", 1956);
         Book book3 = new Book(3L, "Kon-Tiki", "Thor Heyerdahl", 1948);
