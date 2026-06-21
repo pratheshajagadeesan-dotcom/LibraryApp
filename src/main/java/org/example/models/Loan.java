@@ -34,4 +34,16 @@ public class Loan {
         this.member = member;
 
     }
+
+    public Long getLoanId() {
+        return loanId;
+    }
+
+    public BookModel getBook() {
+        return book;
+    }
+
+    public Member getMember() {
+        return member;
+    }
 }

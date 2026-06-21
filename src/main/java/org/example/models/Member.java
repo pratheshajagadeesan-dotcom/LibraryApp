@@ -25,4 +25,12 @@ public class Member {
         this.name = name;
 
     }
+
+    public Long getMemberId() {
+        return memberId;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
