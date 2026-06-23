@@ -1,14 +1,28 @@
 package org.example.models;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 /**
  * Represents a book loan.
  */
-
+@Entity
 public class Loan {
 
+    @Id
     private Long loanId;
+
+    @ManyToOne
+    @JoinColumn(name = "book_id")
     private BookModel book;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
     private Member member;
+
+    protected Loan() {
+    }
 
     public Loan(Long loanId,
                 BookModel book,
