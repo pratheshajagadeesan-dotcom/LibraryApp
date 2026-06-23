@@ -1,14 +1,25 @@
 package org.example.models;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 /**
  * Represent a book in the library.
  */
 
+@Entity
+@Table(name = "books")
 public class BookModel extends LibraryItem {
 
     private String author;
+    @Column(name = "book_year")
     private Integer year;
     private BookStatus status;
+
+    protected BookModel() {
+    }
+
+
 
     public BookModel(Long id,
                      String title,
